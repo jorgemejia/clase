@@ -9,7 +9,7 @@ class ShowProducts extends Controller
 {
     //
     public function get_products($id){
-        $store = Stores::with(['products'])->where('id', $id)->get()->toArray();
-        dd($store);
+        $products = Stores::with(['products'])->where('id', $id)->get()->toArray();
+        return view('pages.home', ['products' => $products[0]["products"] ] );
     }
 }
