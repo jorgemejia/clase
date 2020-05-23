@@ -16,3 +16,5 @@ Route::get('/', function () {
 });
 
 Route::get('channel/{id}', 'UserController@get_channel');
+
+Route::get('store/{id}', 'ShowProducts@get_products');

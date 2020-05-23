@@ -15,8 +15,9 @@
 </style>
 <p>Estas viendo: </p>
 <p>{{ $ejemplo }}</p>
+
 @if ($channel && count($channel) > 0)
-    <img src="{{asset( $channel{0}->image )}}" />
+    <img src="{{asset( $channel[0]->image )}}" />
     @else
     <img src="{{asset( 'imgs/nosignal.jpg' )}}" />
 @endif
