@@ -34,7 +34,10 @@
 
         </div>
 
+        <div id="example"></div>
+
         <!-- inject js start -->
 
     </body>
+<script src="{{ asset('js/app.js') }}" ></script>
 </html>
