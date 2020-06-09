@@ -34,7 +34,7 @@
 
         </div>
 
-        <div id="example"></div>
+{{--        <div id="example"></div>--}}
 
         <!-- inject js start -->
 
