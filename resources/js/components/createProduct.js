@@ -9,6 +9,7 @@ export default class CreateProduct extends Component {
             name:'',
             description:'',
             store_id:0,
+            data: data,
             stores:[
                 {id:1, name:'Doña mary'},
                 {id:2, name:'Tienda de la esquina'},
@@ -18,6 +19,8 @@ export default class CreateProduct extends Component {
 
         this.handleInputChange = this.handleInputChange.bind(this);
         this.saveButton = this.saveButton.bind(this);
+
+        console.log("Constructor ", this.state);
     }
 
     handleInputChange(event){

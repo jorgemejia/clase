@@ -28,8 +28,24 @@ class ShowProducts extends Controller
                 return response()->json(["success" => "Datos Guardados correctamente"], 200);
             }
         }
+    }
 
+    public function editProduct( Request $request ){
 
+        if( $request ){
+            $product = Products::where('id', $request->id)->update( $request->toArray() );
+            if( $product ) {
+                return response()->json(["success" => "Datos Actualizados correctamente"], 200);
+            }
+        }
+    }
 
+    public function deleteProduct( Request $request){
+        if( $request ){
+            $deletedRows = Products::where('active', 0)->delete();
+            if( $deletedRows ) {
+                return response()->json(["success" => "Datos Eliminados"], 200);
+            }
+        }
     }
 }
