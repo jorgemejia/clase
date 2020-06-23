@@ -21,3 +21,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('save/product', 'ShowProducts@save');
 Route::patch('edit/product', 'ShowProducts@editProduct');
 Route::delete('delete/product', 'ShowProducts@deleteProduct');
+Route::post('user/login', 'LoginController@authenticate');

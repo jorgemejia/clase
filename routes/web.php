@@ -15,11 +15,19 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('channel/{id}', 'UserController@get_channel');
+Route::get('channel/{id}', 'UserController@get_channel')->middleware('auth');;
 
-Route::get('store/{id}', 'ShowProducts@get_products');
+Route::get('store/{id}', 'ShowProducts@get_products')->middleware('auth');;
 
 Route::get('new/product', function () {
     $data = ["Ejemplo" => 1];
     return view('pages.createProduct')->with('data', $data);;
-});
+})->middleware('auth');;
+
+Auth::routes();
+
+Route::get('/test', function () {
+    return view('pages.login');
+})->middleware('auth');
+
+Route::get('/home', 'HomeController@index')->name('home');
